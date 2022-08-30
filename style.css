@@ -1,0 +1,121 @@
+.slider{
+
+    width: 90%;
+    margin: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+.slider ul {
+
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slider-autoplay 20s infinite alternate;
+
+}
+
+
+.slider-item{
+    border-radius: .5rem;
+    width: 100%;
+}
+
+
+input[id="sld-1"]:checked ~ ul{
+
+    animation: none;
+    margin-left: 0%;
+}
+
+input[id="sld-2"]:checked ~ ul{
+    animation: none;
+    margin-left: -100%;
+
+}
+input[id="sld-3"]:checked ~ ul{
+    animation: none;
+    margin-left: -200%;
+}
+
+input[id="sld-4"]:checked ~ ul{
+    animation: none;
+    margin-left: -300%;
+}
+
+
+.pagination-slider{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.pagination-slider__item{
+    overflow: hidden;
+    height: 25px;
+    width: 30px;
+    border-radius: 4px;
+    border: 2px solid rgb(255, 255, 255);
+    background: rgb(255, 255, 255, 0.250);
+    transition: all 300ms;
+}
+
+
+.pagination-slider__item:hover{
+
+    transform: scale(1.2);
+}
+.pagination-slider__item img{
+
+    opacity: 0;
+    height: 100%;
+    transition: all 300ms;
+}
+
+.pagination-slider__item:hover img{
+
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+input[id="sld-1"]:checked ~ .pagination-slider > .pagination-slider__item[for="sld-1"]{
+
+    background: rgb(255, 255, 255, 0.990);
+    transform: scale(1.2);
+}
+input[id="sld-2"]:checked ~ .pagination-slider > .pagination-slider__item[for="sld-2"]{
+
+    background: rgb(255, 255, 255, 0.990);
+    transform: scale(1.2);
+}
+input[id="sld-3"]:checked ~ .pagination-slider > .pagination-slider__item[for="sld-3"]{
+
+    background: rgb(255, 255, 255, 0.950);
+    transform: scale(1.2);
+}
+input[id="sld-4"]:checked ~ .pagination-slider > .pagination-slider__item[for="sld-4"]{
+
+    background: rgb(255, 255, 255, 0.950);
+    transform: scale(1.2);
+}
+
+@keyframes slider-autoplay{
+
+    0% {margin-left: 0;}    
+    20% {margin-left: 0;}  
+
+    25% {margin-left: -100%;}    
+    45% {margin-left: -100%;}    
+
+    50% {margin-left: -200%;}    
+    70% {margin-left: -200%;} 
+
+    75% {margin-left: -300%;}    
+    100% {margin-left: -300%;}    
+}
